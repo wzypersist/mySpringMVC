@@ -1,5 +1,6 @@
 package com.wzy.mvc.handler.mapping;
 
+import com.wzy.mvc.annotation.RequestMapping;
 import com.wzy.mvc.http.RequestMethod;
 
 public class RequestMappingInfo {
@@ -8,9 +9,9 @@ public class RequestMappingInfo {
     
     private RequestMethod requestMethod;
 
-    public RequestMappingInfo(String path, RequestMethod requestMethod) {
-        this.path = path;
-        this.requestMethod = requestMethod;
+    public RequestMappingInfo(String path, RequestMapping requestMapping) {
+        this.path = path + requestMapping.path();
+        this.requestMethod = requestMapping.method();
     }
 
     public String getPath() {
