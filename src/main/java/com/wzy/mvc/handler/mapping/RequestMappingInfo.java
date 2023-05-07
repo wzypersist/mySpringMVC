@@ -9,8 +9,8 @@ public class RequestMappingInfo {
     
     private RequestMethod requestMethod;
 
-    public RequestMappingInfo(String path, RequestMapping requestMapping) {
-        this.path = path + requestMapping.path();
+    public RequestMappingInfo(String classPath, RequestMapping requestMapping) {
+        this.path = classPath + requestMapping.path();
         this.requestMethod = requestMapping.method();
     }
 
